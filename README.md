@@ -23,3 +23,5 @@ Open `http://127.0.0.1:8000/` in your browser.
 ## Notes
 - The app uses Open-Meteo geocoding and weather APIs.
 - Internet access is required when searching for weather.
+
+- By Suman Anand
