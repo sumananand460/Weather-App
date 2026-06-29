@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Weather App</h1>
+      <p class="subtitle">Search any city to see the current weather.</p>
+
+      <form method="get" class="search-form">
+        {{ form.city }}
+        <button type="submit">Search</button>
+      </form>
+
+      {% if error %}
+        <div class="alert">{{ error }}</div>
+      {% endif %}
+
+      {% if weather %}
+        <div class="weather-box">
+          <h2>{{ weather.city }}{% if weather.country %}, {{ weather.country }}{% endif %}</h2>
+          <p class="desc">{{ weather.description }}</p>
+          <div class="grid">
+            <div><span>Temperature</span><strong>{{ weather.temperature }}°C</strong></div>
+            <div><span>Wind Speed</span><strong>{{ weather.windspeed }} km/h</strong></div>
+            <div><span>Latitude</span><strong>{{ weather.latitude }}</strong></div>
+            <div><span>Longitude</span><strong>{{ weather.longitude }}</strong></div>
+            <div><span>Time</span><strong>{{ weather.time }}</strong></div>
+            <div><span>Timezone</span><strong>{{ weather.timezone }}</strong></div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>
